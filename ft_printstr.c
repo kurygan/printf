@@ -6,11 +6,11 @@
 /*   By: mkettab <mkettab@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 00:56:30 by mkettab           #+#    #+#             */
-/*   Updated: 2024/11/19 19:28:04 by mkettab          ###   ########.fr       */
+/*   Updated: 2024/11/20 20:04:35 by mkettab          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf_utils.h"
+#include "ft_printf.h"
 
 int	ft_putstr(char *str)
 {
@@ -30,14 +30,14 @@ int	ft_putchar(char c)
 
 int	ft_putptr(void *ptr)
 {
-	uintptr_t converted; 
+	long converted; 
 	
-	converted = (uintptr_t) ptr;
+	converted = (long) ptr;
 	if(!ptr)
 	{
 		ft_putstr("(nil)");
 		return (-1);
 	}
 	write(1, "0x", 2);
-	return (ft_puthex((unsigned int)converted, 1) + 2);
+	return (ft_puthex(converted, 1) + 2);
 }

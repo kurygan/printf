@@ -6,11 +6,11 @@
 /*   By: mkettab <mkettab@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 18:13:47 by mkettab           #+#    #+#             */
-/*   Updated: 2024/11/19 03:23:39 by mkettab          ###   ########.fr       */
+/*   Updated: 2024/11/20 20:06:42 by mkettab          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf_utils.h"
+#include "ft_printf.h"
 
 int	ft_strlen(char *s)
 {
@@ -22,7 +22,7 @@ int	ft_strlen(char *s)
 	return (j);
 }
 
-int ft_intlen(int j)
+int ft_intlen(long j)
 {
 	int	count;
 
@@ -39,7 +39,7 @@ int ft_intlen(int j)
 	return (count);
 }
 
-int	ft_intunslen(unsigned int c)
+int	ft_intunslen(long c)
 {
 	int count;
 	
@@ -54,7 +54,7 @@ int	ft_intunslen(unsigned int c)
 	return (count);
 }
 
-int	ft_inthexlen(int c)
+int	ft_inthexlen(long c)
 {
 	int count;
 	

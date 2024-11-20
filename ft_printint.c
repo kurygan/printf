@@ -6,13 +6,13 @@
 /*   By: mkettab <mkettab@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 19:35:21 by mkettab           #+#    #+#             */
-/*   Updated: 2024/11/19 19:22:56 by mkettab          ###   ########.fr       */
+/*   Updated: 2024/11/20 20:03:58 by mkettab          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf_utils.h"
+#include "ft_printf.h"
 
-int ft_putint(int d)
+int ft_putint(long d)
 {
 	if(d == -2147483648)
 	{
@@ -34,7 +34,7 @@ int ft_putint(int d)
 	return (ft_intlen(d));
 }
 
-int ft_putunsint(unsigned int d)
+int ft_putunsint(long d)
 {
 	if (d >= 10)
 	{
@@ -46,7 +46,7 @@ int ft_putunsint(unsigned int d)
 	return (ft_intunslen(d));
 }
 
-int	ft_puthex(unsigned int c, int low)
+int	ft_puthex(long c, int low)
 {
 	char *base;
 	if(low == 1)

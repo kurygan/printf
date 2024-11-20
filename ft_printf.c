@@ -6,28 +6,26 @@
 /*   By: mkettab <mkettab@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 21:58:53 by mkettab           #+#    #+#             */
-/*   Updated: 2024/11/19 19:26:36 by mkettab          ###   ########.fr       */
+/*   Updated: 2024/11/20 20:40:39 by mkettab          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf_utils.h"
+#include "ft_printf.h"
 
 int ft_args(char c, va_list args)
 {
-	if (c == 'd')
-		return (ft_putint(va_arg(args, int)));
-	else if (c == 'i')
-		return (ft_putint(va_arg(args, int)));
+	if (c == 'd' || c == 'i')
+		return(ft_putint(va_arg(args, int)));
 	else if (c == 's')
 		return (ft_putstr(va_arg(args, char *)));
 	else if (c == 'c')
-		return (ft_putchar(va_arg(args, int)));
+		return(ft_putchar(va_arg(args, int)));
 	else if (c == 'u')
 		return (ft_putunsint(va_arg(args, unsigned int)));
 	else if (c == 'x')
-		return (ft_puthex(va_arg(args, int), 1));
+		return (ft_puthex(va_arg(args, long), 1));
 	else if (c == 'X')
-		return (ft_puthex(va_arg(args, int), 0));
+		return (ft_puthex(va_arg(args, long), 0));
 	else if (c == '%')
 		return (ft_putchar('%'));
 	else if (c == 'p')
@@ -62,11 +60,13 @@ int	ft_printf(const char *s, ...)
 	return (final_len);
 }
 
-int main(void)
-{
-	int f = ft_printf("%p", NULL);
-	ft_printf("\n");
-	ft_printf("%d", f);
-
-	return 0;
+int main(){
+	ft_printf("ft_printf: ");
+	int printf42 = ft_printf(" %c %c %c ", '0', 0, '1');
+	printf("\nprintf: ");
+	int printfoff = printf(" %c %c %c ", '0', 0 ,'1');
+	printf("\n");
+	
+	printf("ft_printf: %d\t", printf42);
+	printf("printf: %d\n", printfoff);	
 }
