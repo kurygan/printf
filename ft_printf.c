@@ -6,7 +6,7 @@
 /*   By: mkettab <mkettab@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 21:58:53 by mkettab           #+#    #+#             */
-/*   Updated: 2024/11/20 20:40:39 by mkettab          ###   ########.fr       */
+/*   Updated: 2024/11/27 21:04:34 by mkettab          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,9 +62,9 @@ int	ft_printf(const char *s, ...)
 
 int main(){
 	ft_printf("ft_printf: ");
-	int printf42 = ft_printf(" %c %c %c ", '0', 0, '1');
+	int printf42 = ft_printf(" NULL %s NULL ", NULL);
 	printf("\nprintf: ");
-	int printfoff = printf(" %c %c %c ", '0', 0 ,'1');
+	int printfoff = printf(" NULL %s NULL ", NULL);
 	printf("\n");
 	
 	printf("ft_printf: %d\t", printf42);
