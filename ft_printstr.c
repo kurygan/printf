@@ -6,7 +6,7 @@
 /*   By: mkettab <mkettab@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 00:56:30 by mkettab           #+#    #+#             */
-/*   Updated: 2024/11/20 20:04:35 by mkettab          ###   ########.fr       */
+/*   Updated: 2024/11/27 22:55:29 by mkettab          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ int	ft_putstr(char *str)
 {
 	int	count;
 
+	if(!str)
+		return (ft_putstr("(null)"));
 	count = ft_strlen(str);
 	while(*str)
 		write(1, str++, 1);
@@ -30,14 +32,11 @@ int	ft_putchar(char c)
 
 int	ft_putptr(void *ptr)
 {
-	long converted; 
+	unsigned long long converted; 
 	
-	converted = (long) ptr;
+	converted = (unsigned long long) ptr;
 	if(!ptr)
-	{
-		ft_putstr("(nil)");
-		return (-1);
-	}
+		return (ft_putstr("(nil)"));
 	write(1, "0x", 2);
 	return (ft_puthex(converted, 1) + 2);
 }

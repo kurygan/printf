@@ -6,7 +6,7 @@
 /*   By: mkettab <mkettab@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 21:58:53 by mkettab           #+#    #+#             */
-/*   Updated: 2024/11/27 21:04:34 by mkettab          ###   ########.fr       */
+/*   Updated: 2024/11/27 22:55:44 by mkettab          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ int ft_args(char c, va_list args)
 	else if (c == 'u')
 		return (ft_putunsint(va_arg(args, unsigned int)));
 	else if (c == 'x')
-		return (ft_puthex(va_arg(args, long), 1));
+		return (ft_puthex(va_arg(args, unsigned long long), 1));
 	else if (c == 'X')
-		return (ft_puthex(va_arg(args, long), 0));
+		return (ft_puthex(va_arg(args, unsigned long long), 0));
 	else if (c == '%')
 		return (ft_putchar('%'));
 	else if (c == 'p')
@@ -60,13 +60,13 @@ int	ft_printf(const char *s, ...)
 	return (final_len);
 }
 
-int main(){
-	ft_printf("ft_printf: ");
-	int printf42 = ft_printf(" NULL %s NULL ", NULL);
-	printf("\nprintf: ");
-	int printfoff = printf(" NULL %s NULL ", NULL);
-	printf("\n");
+//int main(){
+//	ft_printf("ft_printf: ");
+//	int printf42 = ft_printf(" %p %p ", 0, 0);
+//	printf("\nprintf: ");
+//	int printfoff = printf(" %p %p ", (void *)0, (void *)0);
+//	printf("\n");
 	
-	printf("ft_printf: %d\t", printf42);
-	printf("printf: %d\n", printfoff);	
-}
+//	printf("ft_printf: %d\t", printf42);
+//	printf("printf: %d\n", printfoff);	
+//}

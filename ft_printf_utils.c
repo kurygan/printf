@@ -6,7 +6,7 @@
 /*   By: mkettab <mkettab@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 18:13:47 by mkettab           #+#    #+#             */
-/*   Updated: 2024/11/20 20:06:42 by mkettab          ###   ########.fr       */
+/*   Updated: 2024/11/27 22:52:14 by mkettab          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ int	ft_intunslen(long c)
 	return (count);
 }
 
-int	ft_inthexlen(long c)
+int	ft_inthexlen(unsigned long long c)
 {
 	int count;
 	
