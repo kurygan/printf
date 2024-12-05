@@ -6,7 +6,7 @@
 /*   By: mkettab <mkettab@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 00:56:30 by mkettab           #+#    #+#             */
-/*   Updated: 2024/11/27 22:55:29 by mkettab          ###   ########.fr       */
+/*   Updated: 2024/12/05 18:26:48 by mkettab          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,11 @@ int	ft_putchar(char c)
 
 int	ft_putptr(void *ptr)
 {
-	unsigned long long converted; 
+	uintptr_t converted; 
 	
-	converted = (unsigned long long) ptr;
-	if(!ptr)
-		return (ft_putstr("(nil)"));
+	converted = (uintptr_t) ptr;
+	// if(!ptr)
+	// 	return (ft_putstr("(nil)"));
 	write(1, "0x", 2);
-	return (ft_puthex(converted, 1) + 2);
+	return (ft_puthex((unsigned long)converted, 1) + 2);
 }

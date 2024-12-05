@@ -6,30 +6,30 @@
 /*   By: mkettab <mkettab@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 21:58:53 by mkettab           #+#    #+#             */
-/*   Updated: 2024/11/27 22:55:44 by mkettab          ###   ########.fr       */
+/*   Updated: 2024/12/05 18:29:24 by mkettab          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int ft_args(char c, va_list args)
+int ft_args(char c, va_list *args)
 {
 	if (c == 'd' || c == 'i')
-		return(ft_putint(va_arg(args, int)));
+		return(ft_putint(va_arg(*args, int)));
 	else if (c == 's')
-		return (ft_putstr(va_arg(args, char *)));
+		return (ft_putstr(va_arg(*args, char *)));
 	else if (c == 'c')
-		return(ft_putchar(va_arg(args, int)));
+		return(ft_putchar(va_arg(*args, int)));
 	else if (c == 'u')
-		return (ft_putunsint(va_arg(args, unsigned int)));
+		return (ft_putunsint(va_arg(*args, unsigned int)));
 	else if (c == 'x')
-		return (ft_puthex(va_arg(args, unsigned long long), 1));
+		return (ft_puthex(va_arg(*args, unsigned int), 1));
 	else if (c == 'X')
-		return (ft_puthex(va_arg(args, unsigned long long), 0));
+		return (ft_puthex(va_arg(*args, unsigned int), 0));
 	else if (c == '%')
 		return (ft_putchar('%'));
 	else if (c == 'p')
-		return (ft_putptr(va_arg(args, void *)));
+		return (ft_putptr(va_arg(*args, void *)));
 	return (-1);
 }
 
@@ -45,7 +45,7 @@ int	ft_printf(const char *s, ...)
 	{
 		if(*s == '%')
 		{
-			arg_len = ft_args(*(s + 1), args);
+			arg_len = ft_args(*(s + 1), &args);
 			final_len += arg_len;
 			s++;
 		}
@@ -60,13 +60,13 @@ int	ft_printf(const char *s, ...)
 	return (final_len);
 }
 
-//int main(){
-//	ft_printf("ft_printf: ");
-//	int printf42 = ft_printf(" %p %p ", 0, 0);
-//	printf("\nprintf: ");
-//	int printfoff = printf(" %p %p ", (void *)0, (void *)0);
-//	printf("\n");
+// int main(){
+// 	ft_printf("ft_printf:");
+// 	int printf42 = ft_printf(" %x ", 0);
+// 	printf("\nprintf:");
+// 	int printfoff = printf(" %zu ", sizeof(unsigned long long));
+// 	printf("\n");
 	
-//	printf("ft_printf: %d\t", printf42);
-//	printf("printf: %d\n", printfoff);	
-//}
+// 	printf("ft_printf: %d\t", printf42);
+// 	printf("printf: %d\n", printfoff);	
+// }

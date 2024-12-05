@@ -6,7 +6,7 @@
 /*   By: mkettab <mkettab@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 19:35:21 by mkettab           #+#    #+#             */
-/*   Updated: 2024/11/27 22:56:15 by mkettab          ###   ########.fr       */
+/*   Updated: 2024/12/05 18:25:53 by mkettab          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 
 int ft_putint(long d)
 {
+	long first;
+
+	first = d;
 	if (d < 0)
 	{
 		d = -d;
@@ -26,7 +29,7 @@ int ft_putint(long d)
 	}
 	if(d < 10)
 		ft_putchar(d + '0');
-	return (ft_intlen(d));
+	return (ft_intlen(first));
 }
 
 int ft_putunsint(long d)
@@ -41,9 +44,12 @@ int ft_putunsint(long d)
 	return (ft_intunslen(d));
 }
 
-int	ft_puthex(unsigned long long c, int low)
+int	ft_puthex(unsigned long c, int low)
 {
+	unsigned long long temp;
 	char *base;
+
+	temp = c;
 	if(low == 1)
 		base = "0123456789abcdef";
 	if(low == 0)
@@ -55,5 +61,5 @@ int	ft_puthex(unsigned long long c, int low)
 	}
 	if(c < 16)
 		ft_putchar(base[c]);
-	return (ft_inthexlen(c));
+	return (ft_inthexlen(temp));
 }
