@@ -6,7 +6,7 @@
 /*   By: mkettab <mkettab@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 18:13:47 by mkettab           #+#    #+#             */
-/*   Updated: 2024/12/05 18:25:49 by mkettab          ###   ########.fr       */
+/*   Updated: 2024/12/05 19:24:47 by mkettab          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,21 +17,21 @@ int	ft_strlen(char *s)
 	int	j;
 
 	j = 0;
-	while(*s++)
+	while (*s++)
 		j++;
 	return (j);
 }
 
-int ft_intlen(long j)
+int	ft_intlen(long j)
 {
 	int	count;
 
 	count = 0;
-	if(j == 0)
+	if (j == 0)
 		return (1);
-	if(j < 0)
+	if (j < 0)
 		count++;
-	while(j != 0)
+	while (j != 0)
 	{
 		j /= 10;
 		count++;
@@ -41,10 +41,10 @@ int ft_intlen(long j)
 
 int	ft_intunslen(long c)
 {
-	int count;
-	
+	int	count;
+
 	count = 0;
-	if(c == 0)
+	if (c == 0)
 		return (1);
 	while (c != 0)
 	{
@@ -56,10 +56,10 @@ int	ft_intunslen(long c)
 
 int	ft_inthexlen(unsigned long c)
 {
-	int count;
-	
+	int	count;
+
 	count = 0;
-	if(c == 0)
+	if (c == 0)
 		return (1);
 	if (c < 0)
 		count++;

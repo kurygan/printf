@@ -6,20 +6,20 @@
 /*   By: mkettab <mkettab@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 21:58:53 by mkettab           #+#    #+#             */
-/*   Updated: 2024/12/05 18:29:24 by mkettab          ###   ########.fr       */
+/*   Updated: 2024/12/05 19:26:30 by mkettab          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int ft_args(char c, va_list *args)
+int	ft_args(char c, va_list *args)
 {
 	if (c == 'd' || c == 'i')
-		return(ft_putint(va_arg(*args, int)));
+		return (ft_putint(va_arg(*args, int)));
 	else if (c == 's')
 		return (ft_putstr(va_arg(*args, char *)));
 	else if (c == 'c')
-		return(ft_putchar(va_arg(*args, int)));
+		return (ft_putchar(va_arg(*args, int)));
 	else if (c == 'u')
 		return (ft_putunsint(va_arg(*args, unsigned int)));
 	else if (c == 'x')
@@ -35,15 +35,15 @@ int ft_args(char c, va_list *args)
 
 int	ft_printf(const char *s, ...)
 {
-	int final_len;
-	int arg_len;
-	va_list args;
-	
+	int		final_len;
+	int		arg_len;
+	va_list	args;
+
 	(void)0, final_len = 0, arg_len = 0;
 	va_start(args, s);
-	while(*s)
+	while (*s)
 	{
-		if(*s == '%')
+		if (*s == '%')
 		{
 			arg_len = ft_args(*(s + 1), &args);
 			final_len += arg_len;
@@ -66,7 +66,7 @@ int	ft_printf(const char *s, ...)
 // 	printf("\nprintf:");
 // 	int printfoff = printf(" %zu ", sizeof(unsigned long long));
 // 	printf("\n");
-	
+
 // 	printf("ft_printf: %d\t", printf42);
 // 	printf("printf: %d\n", printfoff);	
 // }
