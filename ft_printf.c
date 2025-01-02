@@ -6,7 +6,7 @@
 /*   By: mkettab <mkettab@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 21:58:53 by mkettab           #+#    #+#             */
-/*   Updated: 2024/12/05 19:26:30 by mkettab          ###   ########.fr       */
+/*   Updated: 2025/01/01 22:00:25 by mkettab          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,9 +62,9 @@ int	ft_printf(const char *s, ...)
 
 // int main(){
 // 	ft_printf("ft_printf:");
-// 	int printf42 = ft_printf(" %x ", 0);
+// 	int printf42 = ft_printf(" %d ", INT32_MIN);
 // 	printf("\nprintf:");
-// 	int printfoff = printf(" %zu ", sizeof(unsigned long long));
+// 	int printfoff = printf(" %ld ", LONG_MIN);
 // 	printf("\n");
 
 // 	printf("ft_printf: %d\t", printf42);

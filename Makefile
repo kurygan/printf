@@ -16,7 +16,7 @@ $(OBJS_DIR)%.o: %.c
 	@mkdir -p $(OBJS_DIR)
 	@cc $(FLAGS) -c $< -o $@
 
-$(NAME): $(OBJS_PREF) signature
+$(NAME): $(OBJS_PREF)
 	@echo "Archive Compiled"
 	@ar rcs $(NAME) $(OBJS_PREF)
 
@@ -26,7 +26,7 @@ clean:
 	@rm -rf $(OBJS_DIR)
 	@echo "Removing objects.."
 
-fclean: clean signature
+fclean: clean
 	@rm -f $(NAME)
 	@echo "Cleaning.."
 
@@ -35,24 +35,26 @@ test: all $(TEST)
 	@./$(TEST:.c=)
 	@rm -rf ./$(TEST:.c=)
 
-re: fclean all signature
+re: fclean all
 
-signature:
-	@echo ""
-	@echo ""
-	@echo ""
-	@echo ""
-	@echo ""
-	@echo "        ,====,,'''',,,             _____________________________________"
-	@echo " _______||__||_______ ''',       /'                                    |"
-	@echo "|    | |      | |    |    ;    /'  Name: ____Kurygan (mkettab)________ |"
-	@echo "|   CMIYGL    | |    |   ;   / o   Address: __mkettab@student.42.fr___ |"
-	@echo "|    | |      | |    |    '''\     School: ______42_Mulhouse__________ |"
-	@echo "|    | |      IGOR   |        \`\          __CALL_ME_IF_YOU_GET_LOST___ |"
-	@echo "|  OFWGKTA    | |    |          \`\.____________________________________|"
-	@echo "|____|_|______|_|____|"
-	@echo ""
-	@echo ""
-	@echo ""
-	@echo ""
-	@echo ""
+.PHONY: all clean fclean re
+
+# signature:
+# 	@echo ""
+# 	@echo ""
+# 	@echo ""
+# 	@echo ""
+# 	@echo ""
+# 	@echo "        ,====,,'''',,,             _____________________________________"
+# 	@echo " _______||__||_______ ''',       /'                                    |"
+# 	@echo "|    | |      | |    |    ;    /'  Name: ____Kurygan (mkettab)________ |"
+# 	@echo "|   CMIYGL    | |    |   ;   / o   Address: __mkettab@student.42.fr___ |"
+# 	@echo "|    | |      | |    |    '''\     School: ______42_Mulhouse__________ |"
+# 	@echo "|    | |      IGOR   |        \`\          __CALL_ME_IF_YOU_GET_LOST___ |"
+# 	@echo "|  OFWGKTA    | |    |          \`\.____________________________________|"
+# 	@echo "|____|_|______|_|____|"
+# 	@echo ""
+# 	@echo ""
+# 	@echo ""
+# 	@echo ""
+# 	@echo ""
